@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-AU" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Redacted sample forensic document examination report prepared by J. Brandi, Signature Forensic. Illustrates report format, methodology, and expert opinion framework.">
+  <title>Sample Forensic Report — Redacted | Signature Forensic</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon-redesign.svg">
+  <link rel="shortcut icon" href="../assets/favicon-redesign.svg">
+  <link rel="apple-touch-icon" href="../assets/favicon-redesign.svg">
+  <meta name="theme-color" content="#7B1A2D">
+
+  <link rel="stylesheet" href="../assets/redesign.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    .report { max-width: 820px; margin: 0 auto; }
+    .report__paper { background: white; box-shadow: var(--shadow-lg); padding: 60px 70px; position: relative; }
+    .report__paper::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--color-primary); }
+    .report__header { text-align: center; border-bottom: 2px solid var(--color-secondary); padding-bottom: var(--space-xl); margin-bottom: var(--space-2xl); }
+    .report__title { font-size: var(--text-xl); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-sm); }
+    .report__case { font-size: var(--text-lg); font-weight: 700; color: var(--color-secondary); margin-bottom: var(--space-sm); }
+    .report__ref { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .report__section { margin-bottom: var(--space-2xl); }
+    .report__section-title { font-size: var(--text-lg); font-weight: 700; color: var(--color-primary); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm); margin-bottom: var(--space-md); }
+    .report__label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); font-weight: 600; margin-bottom: 2px; }
+    .report__value { font-weight: 500; margin-bottom: var(--space-md); }
+    report__body-text { font-size: var(--text-sm); line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+    .redacted { background: #1a1a2e; color: #1a1a2e; padding: 0 6px; border-radius: 3px; cursor: help; position: relative; display: inline-block; }
+    .redacted:hover { color: #e0e0e0; }
+    .redacted:hover::after { content: attr(data-label); position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%); background: var(--color-secondary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; white-space: nowrap; }
+    .redaction-note { display: inline-block; background: #f1f5f9; color: var(--color-text-muted); font-size: var(--text-xs); padding: 2px 10px; border-radius: 4px; margin-left: var(--space-sm); font-style: italic; }
+    .report__evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin: var(--space-lg) 0; }
+    .report__evidence-item { background: var(--color-bg-alt); padding: var(--space-md); border-radius: var(--radius-md); border-left: 3px solid var(--color-primary); }
+    .report__evidence-label { font-weight: 700; font-size: var(--text-sm); color: var(--color-secondary); }
+    .report__evidence-desc { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 4px; }
+    .report__findings-table { width: 100%; border-collapse: collapse; margin: var(--space-lg) 0; }
+    .report__findings-table th, .report__findings-table td { padding: var(--space-sm); font-size: var(--text-sm); text-align: left; border-bottom: 1px solid var(--color-border); }
+    .report__findings-table th { background: var(--color-bg-alt); font-weight: 600; color: var(--color-secondary); }
+    .report__signature-block { margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
+    .report__signature-name { font-weight: 700; font-size: var(--text-base); }
+    .report__signature-title { font-size: var(--text-sm); color: var(--color-text-secondary); }
+    .report__disclaimer { background: var(--color-bg-alt); border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-2xl); border-left: 4px solid var(--color-accent); }
+    .report__disclaimer p { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: 0; }
+    @media print { .nav, .footer, .no-print { display: none; } .report__paper { box-shadow: none; padding: 40px; } }
+    @media (max-width: 640px) { .report__paper { padding: 30px 20px; } .report__evidence-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav no-print" id="mainNav">
+  <div class="nav__inner">
+    <a href="home-redesign.html" class="nav__logo" aria-label="Signature Forensic Home">
+      <img src="../assets/logo-redesign.svg" alt="Signature Forensic" style="height:44px">
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="home-redesign.html">Home</a></li>
+      <li><a href="home-redesign.html#profession">For the Profession</a></li>
+      <li><a href="home-redesign.html#contact" class="nav__cta">Enquire Now</a></li>
+    </ul>
+    <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== INTRODUCTION ========== -->
+<section class="section no-print" style="padding-top:100px;padding-bottom:0">
+  <div class="container container--narrow" style="text-align:center">
+    <a href="home-redesign.html#profession" style="display:inline-flex;align-items:center;gap:8px;color:var(--color-primary);text-decoration:none;font-weight:600;font-size:var(--text-sm);margin-bottom:var(--space-xl)">&larr; Back to For the Profession</a>
+    <h1 style="margin-bottom:var(--space-sm)">Sample forensic report</h1>
+    <p style="color:var(--color-text-muted);max-width:600px;margin:0 auto">
+      This is a redacted example of a forensic document examination report. All identifying details of parties, case references, locations, and dates have been obscured. The structure, methodology, and reporting format reflect our standard court-admissible reporting practice.
+    </p>
+    <div style="display:inline-block;background:#f1f5f9;color:var(--color-primary);padding:4px 16px;border-radius:20px;font-size:var(--text-xs);font-weight:600;margin-top:var(--space-md)">
+      FOR EDUCATIONAL REFERENCE ONLY &mdash; NOT A CERTIFIED REPORT
+    </div>
+  </div>
+</section>
+
+<!-- ========== REPORT ========== -->
+<section class="section" style="padding-top:var(--space-xl)">
+  <div class="container container--narrow report">
+
+    <div class="report__paper reveal">
+
+      <!-- REPORT HEADER -->
+      <div class="report__header">
+        <div class="report__title">Forensic Document Examination Report</div>
+        <div class="report__case">In the matter of <span class="redacted" data-label="Case name redacted">[Redacted]</span></div>
+        <div class="report__ref">
+          Report reference: EX-<span class="redacted" data-label="Year">2026</span>-<span class="redacted" data-label="Sequential number">0142</span><br>
+          Prepared by: <strong>J. Brandi</strong>, Director &amp; Lead Examiner<br>
+          Instructed by: <span class="redacted" data-label="Instructing solicitor redacted">[Redacted]</span><br>
+          Date of report: <span class="redacted" data-label="Date redacted">[Redacted]</span>
+        </div>
+      </div>
+
+      <!-- 1. TABLE OF CONTENTS -->
+      <div class="report__section">
+        <div class="report__section-title">1. Table of contents</div>
+        <ol style="font-size:var(--text-sm);line-height:2.2;margin-left:var(--space-lg)">
+          <li>Table of contents</li>
+          <li>Instructions and scope</li>
+          <li>Expert&rsquo;s declaration</li>
+          <li>Qualifications and experience</li>
+          <li>Materials received and examined</li>
+          <li>Methodology</li>
+          <li>Examinations conducted</li>
+          <li>Findings and observations</li>
+          <li>Opinion</li>
+          <li>Appendix &mdash; Abbreviations and glossary</li>
+        </ol>
+      </div>
+
+      <!-- 2. INSTRUCTIONS & SCOPE -->
+      <div class="report__section">
+        <div class="report__section-title">2. Instructions and scope</div>
+        <p class="report__body-text">
+          I was instructed by <span class="redacted" data-label="Instructing party">[Redacted]</span> to conduct a forensic document examination of one (1) questioned document, being a document purporting to be a signed <span class="redacted" data-label="Document type">[Deed of Variation]</span> dated <span class="redacted" data-label="Document date">[Redacted]</span> (the &ldquo;Questioned Document&rdquo;), together with four (4) known exemplar documents containing the disputed signatures (the &ldquo;Known Specimens&rdquo;).
+        </p>
+        <p class="report__body-text">
+          The specific questions put to me were:
+        </p>
+        <ol style="font-size:var(--text-sm);line-height:1.8;margin-left:var(--space-lg);margin-bottom:var(--space-md)">
+          <li>Whether the signature appearing on the Questioned Document purporting to be that of <span class="redacted" data-label="Signatory name">[Mr A. B. Sample]</span> was written by that person;</li>
+          <li>If not, whether any characteristics of the disputed signature permit an opinion as to the identity of the writer;</li>
+          <li>Whether the document exhibits any evidence of alteration, erasure, or other forensic irregularity.</li>
+        </ol>
+        <p class="report__body-text">
+          This report is prepared for the purpose of proceedings in the <span class="redacted" data-label="Court">[Supreme Court of New South Wales]</span>.
+        </p>
+      </div>
+
+      <!-- 3. EXPERT'S DECLARATION -->
+      <div class="report__section">
+        <div class="report__section-title">3. Expert&rsquo;s declaration</div>
+        <p class="report__body-text">
+          I make the following declarations in accordance with the Expert Witness Code of Conduct contained in Schedule 7 of the Uniform Civil Procedure Rules 2005 (NSW) and Part 23 of the Federal Court Rules 2011 (Cth):
+        </p>
+        <ol style="font-size:var(--text-sm);line-height:1.8;margin-left:var(--space-lg)">
+          <li>I understand that my paramount duty is to the Court and not to any party to the proceedings.</li>
+          <li>I have not been instructed to adopt or exclude any particular opinion or conclusion.</li>
+          <li>I have made all enquiries which I believe are appropriate and no matter of significance which I regard as relevant has, to my knowledge, been withheld from the Court.</li>
+          <li>I have prepared this report in conformity with the Expert Witness Code of Conduct.</li>
+          <li>I am available to attend Court to give oral evidence if required.</li>
+        </ol>
+      </div>
+
+      <!-- 4. QUALIFICATIONS & EXPERIENCE -->
+      <div class="report__section">
+        <div class="report__section-title">4. Qualifications and experience</div>
+        <p class="report__body-text">
+          My full curriculum vitae is provided as a separate document. In summary:
+        </p>
+        <ul style="font-size:var(--text-sm);line-height:1.8;margin-left:var(--space-lg)">
+          <li>Over 24 years of forensic document examination experience</li>
+          <li>Director &amp; Lead Examiner, Signature &amp; Handwriting Forensics Pty Ltd</li>
+          <li>Independent consultant to the Australian Federal Police</li>
+          <li>Official Member, The Australasian Society of Forensic Document Examiners (ASFDE)</li>
+          <li>Professional Member, Australia and New Zealand Forensic Science Society (ANZFSS)</li>
+          <li>Accepted as an expert in forensic document examination in the Supreme Court of NSW, District Court of NSW, Local Court of NSW, Federal Court of Australia, and the Federal Circuit and Family Court of Australia</li>
+        </ul>
+      </div>
+
+      <!-- 5. MATERIALS -->
+      <div class="report__section">
+        <div class="report__section-title">5. Materials received and examined</div>
+
+        <div class="report__evidence-grid">
+          <div class="report__evidence-item">
+            <div class="report__evidence-label">Exhibit Q1</div>
+            <div class="report__evidence-desc">Questioned Document: <span class="redacted" data-label="Doc type">[Deed of Variation]</span> dated <span class="redacted" data-label="Date">[Redacted]</span>, comprising two (2) pages, bearing a signature purporting to be that of <span class="redacted" data-label="Name">[Mr A. B. Sample]</span> on page 2. Received as a colour photocopy on A4 paper.</div>
+          </div>
+          <div class="report__evidence-item">
+            <div class="report__evidence-label">Exhibit K1&ndash;K4</div>
+            <div class="report__evidence-desc">Known Specimens: Four (4) documents bearing undisputed signatures of <span class="redacted" data-label="Name">[Mr A. B. Sample]</span>, comprising: (K1) Passport application dated <span class="redacted" data-label="Date">[Redacted]</span>; (K2) Driver licence application dated <span class="redacted" data-label="Date">[Redacted]</span>; (K3) signed Statutory Declaration dated <span class="redacted" data-label="Date">[Redacted]</span>; (K4) executed contract of sale dated <span class="redacted" data-label="Date">[Redacted]</span>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. METHODOLOGY -->
+      <div class="report__section">
+        <div class="report__section-title">6. Methodology</div>
+        <p class="report__body-text">
+          The examination was conducted in accordance with the ASFDE Code of Practice and established forensic document examination methodology. The following techniques were employed:
+        </p>
+        <ol style="font-size:var(--text-sm);line-height:1.8;margin-left:var(--space-lg)">
+          <li><strong>Macroscopic examination</strong> &mdash; Visual inspection under controlled lighting using an inspection magnifier at up to 10&times; magnification</li>
+          <li><strong>Microscopic examination</strong> &mdash; Stereo-zoom microscopy at 10&times;&ndash;60&times; magnification for detailed assessment of pen pressure, ink distribution, line quality, and stroke characteristics</li>
+          <li><strong>Side-by-side comparison</strong> &mdash; Direct visual comparison of the questioned signature against known exemplars</li>
+          <li><strong>Overlay comparison</strong> &mdash; Digital overlay analysis using transparent image comparison to assess alignment of structural features</li>
+          <li><strong>Ink analysis</strong> &mdash; Non-destructive spectral examination using video spectral comparator (VSC) to assess ink composition and layering</li>
+        </ol>
+      </div>
+
+      <!-- 7. EXAMINATIONS -->
+      <div class="report__section">
+        <div class="report__section-title">7. Examinations conducted</div>
+
+        <h4 style="font-size:var(--text-base);color:var(--color-secondary);margin-bottom:var(--space-sm)">7.1 Initial assessment</h4>
+        <p class="report__body-text">
+          The Questioned Document (Q1) was received in good condition. The disputed signature appears on page 2 at the designated execution line. The signature was executed in blue ballpoint ink and measures approximately 52 mm in length and 12 mm in height.
+        </p>
+        <p class="report__body-text">
+          The known specimens (K1&ndash;K4) contain signatures attributed to <span class="redacted" data-label="Name">[Mr A. B. Sample]</span> spanning a period of approximately <span class="redacted" data-label="Years">[five]</span> years. The known specimens exhibit a consistent range of natural variation consistent with genuine handwritten signatures.
+        </p>
+
+        <h4 style="font-size:var(--text-base);color:var(--color-secondary);margin-bottom:var(--space-sm);margin-top:var(--space-lg)">7.2 Handwriting comparison</h4>
+        <p class="report__body-text">
+          The questioned signature (Q1) was compared with the known specimen signatures (K1&ndash;K4) across the following parameters:
+        </p>
+        <ul style="font-size:var(--text-sm);line-height:1.8;margin-left:var(--space-lg)">
+          <li><strong>General form and arrangement:</strong> Overall size proportionality, slant, spacing, and positioning relative to the baseline</li>
+          <li><strong>Letter formations:</strong> Specific construction of individual characters including initial and terminal strokes</li>
+          <li><strong>Connecting strokes:</strong> Patterns of pen lifts, connections between letters, and fluency of movement</li>
+          <li><strong>Pen pressure and shading:</strong> Distribution of pressure throughout the signature, variation in stroke width</li>
+          <li><strong>Speed and fluency:</strong> Evidence of natural, rhythmic writing versus drawn, hesitant, or slowly executed movements</li>
+          <li><strong>Line quality:</strong> Smoothness, continuity, and presence of tremor, patching, or retouching</li>
+        </ul>
+
+        <h4 style="font-size:var(--text-base);color:var(--color-secondary);margin-bottom:var(--space-sm);margin-top:var(--space-lg)">7.3 Document examination</h4>
+        <p class="report__body-text">
+          The document substrate and ink were examined for evidence of alteration, erasure, or any forensic irregularity. Observations were recorded under visible light, ultraviolet illumination, and infrared reflectance.
+        </p>
+      </div>
+
+      <!-- 8. FINDINGS -->
+      <div class="report__section">
+        <div class="report__section-title">8. Findings and observations</div>
+
+        <h4 style="font-size:var(--text-base);color:var(--color-secondary);margin-bottom:var(--space-sm)">8.1 Signature comparison</h4>
+        <p class="report__body-text">
+          The following significant similarities and differences were observed between the questioned signature (Q1) and the known specimens (K1&ndash;K4):
+        </p>
+
+        <table class="report__findings-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Observation</th>
+              <th>Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>General form</td>
+              <td>The questioned signature broadly replicates the overall form and letter sequence of the known specimens</td>
+              <td>Class characteristic &mdash; indicates the writer had knowledge of the general appearance of the genuine signature</td>
+            </tr>
+            <tr>
+              <td>Line quality</td>
+              <td>The questioned signature exhibits evidence of drawn, hesitant stroke formation with periodic pen lifts inconsistent with fluent writing</td>
+              <td>Individualising &mdash; strongly indicative of simulation (copying)</td>
+            </tr>
+            <tr>
+              <td>Pen pressure</td>
+              <td>Uniform, heavy pressure throughout the questioned signature, lacking the natural pressure variation seen in known specimens</td>
+              <td>Individualising &mdash; characteristic of traced or slowly executed simulation</td>
+            </tr>
+            <tr>
+              <td>Initial stroke</td>
+              <td>The initial stroke direction and curvature differ from the known specimens; the known specimens show a consistent upward-left initiation absent in Q1</td>
+              <td>Significant difference</td>
+            </tr>
+            <tr>
+              <td>Letter &lsquo;<span class="redacted" data-label="Letter">[B]</span>&rsquo; formation</td>
+              <td>The questioned signature constructs the letter &lsquo;<span class="redacted" data-label="Letter">[B]</span>&rsquo; with a closed loop structure; known specimens consistently use an open formation</td>
+              <td>Significant difference &mdash; improbable in natural variation</td>
+            </tr>
+            <tr>
+              <td>Terminal stroke</td>
+              <td>The questioned signature ends with a short, abrupt terminal; known specimens exhibit a tapered, descending terminal flourish</td>
+              <td>Significant difference</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size:var(--text-base);color:var(--color-secondary);margin-bottom:var(--space-sm);margin-top:var(--space-lg)">8.2 Document integrity</h4>
+        <p class="report__body-text">
+          Examination of the document substrate revealed no evidence of erasure, alteration, chemical washing, or ink obliteration. The document appears to be a single continuous production with no substituted pages or irregular binding. The ink of the signature is consistent with the ink used in the body text of the document.
+        </p>
+      </div>
+
+      <!-- 9. OPINION -->
+      <div class="report__section">
+        <div class="report__section-title">9. Opinion</div>
+
+        <div style="background:var(--color-bg-alt);padding:var(--space-lg);border-radius:var(--radius-md);border-left:4px solid var(--color-primary);margin-bottom:var(--space-md)">
+          <p class="report__body-text" style="margin-bottom:0;font-weight:600;font-size:var(--text-base);color:var(--color-secondary)">
+            Question 1: Was the signature on the Questioned Document written by <span class="redacted" data-label="Name">[Mr A. B. Sample]</span>?
+          </p>
+          <p class="report__body-text" style="margin-bottom:0">
+            <strong>Opinion: Strong probability that the disputed signature was NOT written by <span class="redacted" data-label="Name">[Mr A. B. Sample]</span>.</strong>
+          </p>
+          <p class="report__body-text" style="margin-bottom:0;font-size:var(--text-sm);margin-top:var(--space-sm)">
+            The questioned signature exhibits a combination of significant differences from the known specimens&mdash;specifically in line quality (drawn, hesitant formation), pen pressure distribution (uniform heavy pressure), initial stroke direction, and letter construction&mdash;that are collectively inconsistent with the natural variation observed within the known specimen set. The characteristics observed are more consistent with a simulated signature, produced by a person who had knowledge of the general appearance of the genuine signature but was not the genuine author.
+          </p>
+        </div>
+
+        <div style="background:var(--color-bg-alt);padding:var(--space-lg);border-radius:var(--radius-md);border-left:4px solid var(--color-text-muted);margin-bottom:var(--space-md)">
+          <p class="report__body-text" style="margin-bottom:0;font-weight:600;font-size:var(--text-base);color:var(--color-secondary)">
+            Question 2: Do any characteristics permit an opinion on the identity of the writer?
+          </p>
+          <p class="report__body-text" style="margin-bottom:0">
+            The characteristics observed in the questioned signature are insufficient to identify the writer. The drawn, slowly executed line quality indicates simulation, but there are insufficient individualising features present to attribute the signature to a particular person. The simulation may have been produced by tracing or by careful freehand copying.
+          </p>
+        </div>
+
+        <div style="background:var(--color-bg-alt);padding:var(--space-lg);border-radius:var(--radius-md);border-left:4px solid var(--color-text-muted)">
+          <p class="report__body-text" style="margin-bottom:0;font-weight:600;font-size:var(--text-base);color:var(--color-secondary)">
+            Question 3: Is there evidence of alteration or irregularity?
+          </p>
+          <p class="report__body-text" style="margin-bottom:0">
+            No evidence of alteration, erasure, or forensic irregularity was detected in the document substrate.
+          </p>
+        </div>
+      </div>
+
+      <!-- 10. SIGNATURE BLOCK -->
+      <div class="report__signature-block">
+        <p class="report__body-text">
+          I confirm that I have made all enquiries which I believe are appropriate and that no matter of significance which I regard as relevant has, to my knowledge, been withheld from the Court. I am available to attend Court to give oral evidence and be cross-examined on the contents of this report if required.
+        </p>
+        <div style="margin-top:var(--space-lg)">
+          <div style="width:250px;height:60px;border-bottom:1px solid var(--color-secondary);margin-bottom:var(--space-sm)"></div>
+          <div class="report__signature-name">J. Brandi</div>
+          <div class="report__signature-title">Director &amp; Lead Examiner</div>
+          <div class="report__signature-title">Signature &amp; Handwriting Forensics Pty Ltd</div>
+          <div class="report__signature-title" style="margin-top:var(--space-sm)">
+            __________________________________________________________________
+          </div>
+          <div class="report__signature-title" style="margin-top:var(--space-xs)">
+            Date: <span id="sample-date"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="report__disclaimer">
+      <p><strong>Important notice:</strong> This is a redacted sample document for educational and illustrative purposes only. It does not represent an actual forensic report prepared for any real proceedings. All identifying details&mdash;including names, dates, case references, client details, and locations&mdash;have been altered or removed. The opinions expressed in this sample are illustrative only and do not constitute forensic advice. Actual forensic reports are prepared on a case-by-case basis after full examination of the materials submitted. &copy; 2026 Signature Forensic.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer no-print">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="../assets/logo-redesign.svg" alt="Signature Forensic" style="height:32px;filter:brightness(10)">
+        <p class="footer__brand-desc">Australia's premier forensic document examination firm. The truth is in the document.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Quick links</h4>
+        <ul class="footer__links">
+          <li><a href="home-redesign.html">Home</a></li>
+          <li><a href="home-redesign.html#services">Services</a></li>
+          <li><a href="home-redesign.html#credentials">Credentials</a></li>
+          <li><a href="home-redesign.html#profession">For the Profession</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__links">
+          <li><a href="mailto:enquire@signatureforensic.com.au">enquire@signatureforensic.com.au</a></li>
+          <li>5 Victoria Parade, Manly NSW 2095</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Signature Forensic. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('nav--scrolled', window.pageYOffset > 60); });
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
+  mobileToggle.addEventListener('click', () => navLinks.classList.toggle('nav__links--open'));
+  navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('nav__links--open')); });
+  document.getElementById('sample-date').textContent = new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+
+</body>
+</html>
